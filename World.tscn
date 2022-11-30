@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 0, 40, -60, 28, 14, -26, 102, 8, 193, 33, 128, 80, 188, -14 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 0, 3, 6 ) ]
+outlines = [ PoolVector2Array( 0, 40, 128, 80, 193, 33, 188, -14, 102, 8, 14, -26, -60, 28 ) ]
+
+[node name="Root" type="Node2D"]
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( -58, -43 )
+
+[node name="Ball2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -15, -81 )
+
+[node name="Ball3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 58, -55 )
+
+[node name="Ball4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, -7 )
+
+[node name="Ball5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 2 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -87, 53 )
+navpoly = SubResource( 1 )
